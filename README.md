@@ -19,9 +19,11 @@ content-type: application/json
     "isActive": true
 }
 
+NOTE: The project does not implement any validations or API security measures.
+
 Steps to setup the API -
 1) Open a command prompt and navigate to the project folder.
 2) The API is set to run at 4180. This can be changed in app.js by assigning a different value const port. Alternatively if you are using nodemon, then change PORT setting under nodemonConfig in package.json. 
 2) Run "npm install".
-3) Run node app.js
+3) Run "node app.js" OR run "npm start" to execute app through nodemon.
 4) The api should now be available at http://localhost:4180. Access the API through desired api testing tool (eg: Postman)

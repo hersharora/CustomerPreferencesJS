@@ -27,6 +27,17 @@ function routes(CustomerPreference) {
             return res.json(preference);
         });
 
+    //get customer preferences for a customerId
+    router.route('/customerpreference/customer/:CustomerId')
+        .get((req, res) => {
+            CustomerPreference.find({ customerId: req.params.CustomerId }, (err, preferences) => {
+                if (err) {
+                    return res.send(err);
+                }
+                return res.json(preferences);
+            });
+        });
+        
     router.use('/customerpreference/:Id', (req, res, next) => {
         CustomerPreference.findById(req.params.Id, (err, preference) => {
             if (err) {
@@ -55,16 +66,7 @@ function routes(CustomerPreference) {
             });
         });
 
-    //get customer preferences for a customerId
-    router.route('/customerpreference/customer/:CustomerId')
-        .get((req, res) => {
-            CustomerPreference.find({ customerId: req.params.CustomerId }, (err, preference) => {
-                if (err) {
-                    return res.send(err);
-                }
-                return res.json(preference);
-            });
-        });
+
 
     return router;
 }
