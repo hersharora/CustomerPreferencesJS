@@ -1,0 +1,30 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "description": "CustomerPreference",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": {
+    "name": "hersh.arora"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19",
+    "nodemon": "^1.18.10"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2000",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4180
+    }
+  }
+}
